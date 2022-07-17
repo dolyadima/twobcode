@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+
+<h1>USERS:</h1>
+
+    {% if not users %}
+        Users not found...
+    {% else %}
+
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+                {% for user in users %}
+                    <div class="col">
+                        <a class="user-list-item" href="/user_detail/{{ user.id }}/">
+                          <div class="card shadow-sm">
+                            <img src="{% static 'userlist/img/no_image.png' %}" width="100%" height="100%" alt="User_Photo">
+                            <div class="card-body">
+                                <b>{{ user.name }}</b>
+                            </div>
+                          </div>
+                        </a>
+                    </div>
+                {% endfor %}
+          </div>
+        </div>
+
+    {% endif %}
+
+{% endblock %}
