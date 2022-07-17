@@ -153,3 +153,5 @@ CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672/'
 
 DEFAULT_FROM_EMAIL = 'Dolya Dima <dolya.d.wt@gmail.com>'
 SITE_URL = os.getenv('SITE_URL', '')
+
+CSRF_TRUSTED_ORIGINS = [f"https://{SITE_URL}", f"https://www.{SITE_URL}"]
