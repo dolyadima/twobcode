@@ -31,14 +31,14 @@
 
             <div class="dropdown text-end">
               <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                {% if user.is_authenticated %}
-                    <img src="{% static 'authentication/img/account.png' %}">{{ user.name }}
+                {% if req_user.is_authenticated %}
+                    <img src="{% static 'authentication/img/account.png' %}">{{ req_user.name }}
                 {% else %}
                     Not logged in
                 {% endif %}
               </a>
               <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                {% if user.is_authenticated %}
+                {% if req_user.is_authenticated %}
                     <li><a class="dropdown-item" href="{% url 'accounts:logout' %}">Sign out</a></li>
                 {% else %}
                     <li><a class="dropdown-item" href="{% url 'accounts:login' %}">Sign in</a></li>

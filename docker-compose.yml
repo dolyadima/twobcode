@@ -13,7 +13,7 @@ services:
       - "5432:5432"
   web:
     build: .
-    image: ithillel-web
+    image: twobcode-web
     volumes:
       - .:/src/
       - static:/static
@@ -32,7 +32,7 @@ services:
 
   celery_worker:
     build: .
-    image: ithillel-web
+    image: twobcode-web
     env_file:
       - .env
     volumes_from:

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+
+    {% if id_not_found %}
+        <p>User: {{ pk }} does not exist.</p>
+    {% else %}
+
+        The user has been deleted successfully.
+
+        <ul class="pagination">
+            <li class="page-item active"><a class="page-link" href="{% url 'userlist:users' %}">Main page</a></li>
+        </ul>
+
+    {% endif %}
+
+{% endblock %}
